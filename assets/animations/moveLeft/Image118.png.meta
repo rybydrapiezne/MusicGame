@@ -39,8 +39,8 @@
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
-        "trimType": "auto",
-        "trimThreshold": -1,
+        "trimType": "none",
+        "trimThreshold": 4,
         "rotated": false,
         "offsetX": 0,
         "offsetY": 0,

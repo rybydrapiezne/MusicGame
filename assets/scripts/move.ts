@@ -1,4 +1,4 @@
-import { _decorator, Animation, Component, EventKeyboard, input, Input, KeyCode, Node, Vec2, Vec3 } from 'cc';
+import { _decorator, Animation, Camera, Component, EventKeyboard, input, Input, KeyCode, Node, Vec2, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 
@@ -6,8 +6,9 @@ const { ccclass, property } = _decorator;
 export class move extends Component {
     @property
     moveSpeed:number = 500.0;
-    @property
-    maxSpeed:number=500.0
+    @property(Node)
+    camera:Node;
+    
 
     xspeed:number=0.0;
     yspeed:number=0.0;
@@ -113,6 +114,7 @@ export class move extends Component {
         //         this.xspeed=this.maxSpeed*this.xspeed/Math.abs(this.xspeed);
         //     }
         this.position=new Vec3(this.node.position.x+this.xspeed,this.node.position.y+this.yspeed);
+        this.camera.position=new Vec3(this.camera.position.x+this.xspeed,this.position.y+this.yspeed);
         //console.log(this.yspeed);
         if(this.xspeed==0 && this.yspeed==0)
             this.animComp.play('animationIdle');
