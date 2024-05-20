@@ -23,7 +23,7 @@
     "_active": true,
     "_components": [],
     "_prefab": {
-      "__id__": 45
+      "__id__": 49
     },
     "_lpos": {
       "__type__": "cc.Vec3",
@@ -54,7 +54,7 @@
     },
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 46
+      "__id__": 50
     },
     "_id": "b571676c-2d1b-4ec8-a9ff-ed15ef347316"
   },
@@ -74,19 +74,19 @@
         "__id__": 6
       },
       {
-        "__id__": 37
+        "__id__": 41
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 42
+        "__id__": 46
       },
       {
-        "__id__": 43
+        "__id__": 47
       },
       {
-        "__id__": 44
+        "__id__": 48
       }
     ],
     "_prefab": null,
@@ -245,12 +245,15 @@
       },
       {
         "__id__": 22
+      },
+      {
+        "__id__": 36
       }
     ],
     "_active": true,
     "_components": [
       {
-        "__id__": 36
+        "__id__": 40
       }
     ],
     "_prefab": null,
@@ -604,9 +607,6 @@
       "__uuid__": "bc4a6b83-8359-4a32-82b7-e6a61fc37cf2",
       "__expectedType__": "cc.Prefab"
     },
-    "component": {
-      "__id__": 20
-    },
     "interval": 5,
     "_id": "6fBsNjU9VO57Bhlzk2AyBa"
   },
@@ -841,11 +841,132 @@
       "__uuid__": "2754dcea-2d1c-4012-8115-c79a46ea38f8",
       "__expectedType__": "cc.Prefab"
     },
-    "component": {
-      "__id__": 34
-    },
     "interval": 3,
     "_id": "f1TnKcM19OdJQxAaoPFFmJ"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Crosshair1",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "_parent": {
+      "__id__": 6
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 37
+      },
+      {
+        "__id__": 38
+      },
+      {
+        "__id__": 39
+      }
+    ],
+    "_prefab": null,
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -49.78600000000006,
+      "y": 18.24000000000001,
+      "z": -1000
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_mobility": 0,
+    "_layer": 33554432,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": "b2FmGjSJZCPInDVshHZyUa"
+  },
+  {
+    "__type__": "cc.UITransform",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 36
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_contentSize": {
+      "__type__": "cc.Size",
+      "width": 25,
+      "height": 25
+    },
+    "_anchorPoint": {
+      "__type__": "cc.Vec2",
+      "x": 0.5,
+      "y": 0.5
+    },
+    "_id": "2a/EdOuSJIuZ0faUMnss0U"
+  },
+  {
+    "__type__": "cc.Sprite",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 36
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_customMaterial": null,
+    "_srcBlendFactor": 2,
+    "_dstBlendFactor": 4,
+    "_color": {
+      "__type__": "cc.Color",
+      "r": 255,
+      "g": 255,
+      "b": 255,
+      "a": 255
+    },
+    "_spriteFrame": {
+      "__uuid__": "03046ac3-3251-4d9b-8147-d3374f28a7e9@f9941",
+      "__expectedType__": "cc.SpriteFrame"
+    },
+    "_type": 0,
+    "_fillType": 0,
+    "_sizeMode": 1,
+    "_fillCenter": {
+      "__type__": "cc.Vec2",
+      "x": 0,
+      "y": 0
+    },
+    "_fillStart": 0,
+    "_fillRange": 0,
+    "_isTrimmedMode": true,
+    "_useGrayscale": false,
+    "_atlas": null,
+    "_id": "38AvUej+VHC7jOBgtaLiEW"
+  },
+  {
+    "__type__": "d0075+Y6NVDB5I9tBCYX/8T",
+    "_name": "",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "node": {
+      "__id__": 36
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "_id": "56ky7uD9VOsbI1IoajdKbt"
   },
   {
     "__type__": "cc.Camera",
@@ -861,7 +982,7 @@
     "_priority": 0,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 454.27974947807934,
+    "_orthoHeight": 452.9436325678497,
     "_near": 0,
     "_far": 1000,
     "_color": {
@@ -905,16 +1026,16 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 38
+        "__id__": 42
       },
       {
-        "__id__": 39
+        "__id__": 43
       },
       {
-        "__id__": 40
+        "__id__": 44
       },
       {
-        "__id__": 41
+        "__id__": 45
       }
     ],
     "_prefab": null,
@@ -953,7 +1074,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 37
+      "__id__": 41
     },
     "_enabled": true,
     "__prefab": null,
@@ -975,7 +1096,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 37
+      "__id__": 41
     },
     "_enabled": true,
     "__prefab": null,
@@ -1014,7 +1135,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 37
+      "__id__": 41
     },
     "_enabled": true,
     "__prefab": null,
@@ -1030,7 +1151,7 @@
     "_objFlags": 0,
     "__editorExtras__": {},
     "node": {
-      "__id__": 37
+      "__id__": 41
     },
     "_enabled": true,
     "__prefab": null,
@@ -1093,7 +1214,7 @@
     "_enabled": true,
     "__prefab": null,
     "_cameraComponent": {
-      "__id__": 36
+      "__id__": 40
     },
     "_alignCanvasWithScreen": true,
     "_id": "12O/ljcVlEqLmVm3U2gEOQ"
@@ -1147,28 +1268,28 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 47
-    },
-    "shadows": {
-      "__id__": 48
-    },
-    "_skybox": {
-      "__id__": 49
-    },
-    "fog": {
-      "__id__": 50
-    },
-    "octree": {
       "__id__": 51
     },
-    "skin": {
+    "shadows": {
       "__id__": 52
     },
-    "lightProbeInfo": {
+    "_skybox": {
       "__id__": 53
     },
-    "postSettings": {
+    "fog": {
       "__id__": 54
+    },
+    "octree": {
+      "__id__": 55
+    },
+    "skin": {
+      "__id__": 56
+    },
+    "lightProbeInfo": {
+      "__id__": 57
+    },
+    "postSettings": {
+      "__id__": 58
     },
     "bakedWithStationaryMainLight": false,
     "bakedWithHighpLightmap": false
