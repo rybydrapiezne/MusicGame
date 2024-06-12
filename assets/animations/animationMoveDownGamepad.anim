@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.AnimationClip",
-    "_name": "animationMoveDown",
+    "_name": "animationMoveDownGamepad",
     "_objFlags": 0,
     "__editorExtras__": {
       "embeddedPlayerGroups": []
@@ -73,39 +73,39 @@
     ],
     "_values": [
       {
-        "__uuid__": "a4bff2d1-f7a9-413f-8277-57c2b2d7f473@f9941",
+        "__uuid__": "b500e75f-1f9b-43c4-a4bd-2abff742dde9@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "59f60d4d-e066-469c-a72e-40651257f699@f9941",
+        "__uuid__": "16a0d335-2cc0-42d2-85af-916640e71fae@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "e72924ea-df6b-41c7-b9d8-d3451a3fc0cc@f9941",
+        "__uuid__": "402ae887-ff6d-4558-bc11-6dcc1537dd5d@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "95cf8abb-93e4-4cca-b91b-39acf6a6b9e6@f9941",
+        "__uuid__": "bf51e460-c4c1-49fb-868e-e611a9c53e86@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "b4c753b4-9d72-47f0-ad1b-2b268e363ecc@f9941",
+        "__uuid__": "fa596a60-fd25-42ef-a3e1-de4f75578efe@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "5437d871-6e93-47e4-8d0d-cf245db984ec@f9941",
+        "__uuid__": "1c7396a4-8249-433b-8e7d-26835bd48b33@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "d8e00bcb-4714-437f-914a-d5bd0bafe39e@f9941",
+        "__uuid__": "688a11d7-ce86-4bd7-abf8-4e09b36f45e7@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "c73cb4b6-01e1-4915-9cfe-05a42ff8f9e8@f9941",
+        "__uuid__": "13144273-aaa8-4b57-af71-e12bbc4013c7@f9941",
         "__expectedType__": "cc.SpriteFrame"
       },
       {
-        "__uuid__": "1bb5a17a-9e60-4420-b4df-4ec25a8b8b72@f9941",
+        "__uuid__": "51c7fdea-425d-4c72-8272-501cc90e03e3@f9941",
         "__expectedType__": "cc.SpriteFrame"
       }
     ]
