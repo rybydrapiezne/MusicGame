@@ -64,8 +64,10 @@ export class move extends Component {
             this.isRight = false;
             this.isLeft = false;
         }
-        console.log(gamepad.leftStick.getValue());
-        //console.log(gamepad.leftStick.down.getValue());
+        // console.log(gamepad.leftStick.getValue());
+        // console.log(gamepad.leftStick.down.getValue());
+        // console.log(gamepad.leftStick.up.getValue());
+        // console.log(gamepad.leftStick.right.getValue());
         // if (gamepad.leftStick.up.getValue() > 0)
         //     this.isUp = true;
         // else
