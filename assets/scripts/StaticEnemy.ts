@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Prefab, instantiate, Vec3, Vec2, RigidBody2D } from 'cc';
+import { _decorator, Component, Node, Prefab, instantiate, Vec3, Vec2, RigidBody2D, Collider2D, Contact2DType, IPhysics2DContact } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('StaticEnemy')
@@ -13,7 +13,12 @@ export class StaticEnemy extends Component {
     fireRate: number = 2.0; // Time in seconds between shots
 
     private timeSinceLastShot: number = 0;
-
+    onLoad() {
+        const collider = this.getComponent(Collider2D);
+        if (collider) {
+            collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
+        }
+    }
     protected update(dt: number): void {
         this.timeSinceLastShot += dt;
 
@@ -46,6 +51,18 @@ export class StaticEnemy extends Component {
         const rigidbody = projectile.getComponent(RigidBody2D) as RigidBody2D;
         if (rigidbody) {
             rigidbody.linearVelocity = new Vec2(direction.x * speed, direction.y * speed);
+        }
+    }
+    private onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact) {
+        if (otherCollider.node.name === 'Note') {
+            console.log('Projectile collided with the monster');
+            // Handle collision with the player (e.g., reduce player health)
+            // Destroy the projectile
+            setTimeout(() => {
+                otherCollider.node.destroy();
+            }, 5);
+
+
         }
     }
 }

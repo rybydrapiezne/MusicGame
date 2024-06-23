@@ -8,6 +8,8 @@ export class PopRight extends Component {
     isMouseDown: boolean = false;
     @property({ type: Node })
     mouseDoer = null;
+    @property
+    canBeShot: boolean = false;
     protected start(): void {
         let collider = this.getComponent(Collider2D);
         collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
@@ -16,6 +18,7 @@ export class PopRight extends Component {
     }
     private onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null) {
         if (this.isMouseDown == true) {
+            this.canBeShot = true;
             setTimeout(() => {
                 otherCollider.node.destroy();
             }, 5);
