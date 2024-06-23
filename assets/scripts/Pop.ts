@@ -17,16 +17,15 @@ export class Pop extends Component {
     }
     private onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null) {
         if (this.isMouseDown == true) {
-            console.log('Projectile collided with the hitbox');
-            otherCollider.node.destroy();
+
+            setTimeout(() => {
+                otherCollider.node.destroy();
+            }, 5);
 
         }
-        console.log("prosze.........")
+
     }
     protected update(dt: number): void {
-        if (this.isMouseDown == true) {
-            console.log("siur");
-        }
         if (this.mouseDoer) {
             this.isMouseDown = this.mouseDoer.getComponent(CursorMove).isLeftDown;
 
