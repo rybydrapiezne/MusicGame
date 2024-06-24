@@ -1,4 +1,4 @@
-import { _decorator, Component, input, Input, EventGamepad, Label, Node } from 'cc';
+import { _decorator, Component, input, Input, EventGamepad, Label, Node, Prefab, instantiate, Vec3, RigidBody2D, Vec2 } from 'cc';
 const { ccclass, property } = _decorator;
 
 @ccclass('GamepadButtonChallenge')
@@ -15,9 +15,22 @@ export class GamepadButtonChallenge extends Component {
     @property(Node)
     buttonsContainer: Node = null; // Parent node containing all labels
 
+    @property(Prefab)
+    note: Prefab = null;
+
+    @property(Node)
+    shootingPoint: Node = null;
+
+    @property(Node)
+    gamepadCursor: Node = null; // Node representing the gamepad cursor
+
+    @property
+    bulletSpeed: number = 20;
+
     private currentButton: string = '';
     private buttonTimeout: any;
     private showButtonInterval: any;
+    private canBeShot: boolean = false;
 
     protected onLoad(): void {
         input.on(Input.EventType.GAMEPAD_INPUT, this.onGamepadInput, this);
@@ -86,6 +99,39 @@ export class GamepadButtonChallenge extends Component {
         console.log(`${this.currentButton} button clicked correctly!`);
         clearTimeout(this.buttonTimeout);
         this.hideAllButtons();
+        this.canBeShot = true;
+        this.shoot();
+    }
+
+    private shoot() {
+        if (!this.note || !this.shootingPoint || !this.gamepadCursor || !this.canBeShot) return;
+
+        console.log("Shooting...");
+        const projectile = instantiate(this.note);
+        if (!projectile) {
+            console.error("Failed to instantiate the bullet prefab.");
+            return;
+        }
+
+        projectile.setParent(this.node.parent);
+        projectile.setPosition(this.shootingPoint.getPosition());
+
+        const crosshairPos = this.gamepadCursor.getPosition();
+        const playerPos = this.shootingPoint.getPosition();
+        const direction = new Vec3(crosshairPos.x - playerPos.x, crosshairPos.y - playerPos.y);
+        direction.normalize();
+
+        console.log(`Bullet direction: ${direction.x}, ${direction.y}`);
+
+        const rigidbody = projectile.getComponent(RigidBody2D);
+        if (rigidbody) {
+            rigidbody.linearVelocity = new Vec2(direction.x * this.bulletSpeed, direction.y * this.bulletSpeed);
+            console.log(`Bullet velocity: ${rigidbody.linearVelocity.x}, ${rigidbody.linearVelocity.y}`);
+        } else {
+            console.error("Projectile does not have a RigidBody2D component");
+        }
+
+        this.canBeShot = false;
     }
 
     protected onDestroy(): void {
