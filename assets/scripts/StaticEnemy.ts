@@ -59,7 +59,7 @@ export class StaticEnemy extends Component {
     }
 
     private onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact) {
-        if (otherCollider.node.name === 'Note') {
+        if (otherCollider.node.name === 'Note' || otherCollider.node.name === 'note') {
             console.log('Projectile collided with the monster');
             // Handle collision with the player (e.g., reduce player health)
             // Destroy the projectile
