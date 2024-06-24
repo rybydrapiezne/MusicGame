@@ -38,8 +38,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": -294,
+      "x": 640,
+      "y": 66.00000000000006,
       "z": 0
     },
     "_lrot": {
@@ -55,7 +55,7 @@
       "y": 1,
       "z": 1
     },
-    "_mobility": 0,
+    "_mobility": 2,
     "_layer": 33554432,
     "_euler": {
       "__type__": "cc.Vec3",
@@ -142,7 +142,7 @@
     "tag": 0,
     "_group": 1,
     "_density": 1,
-    "_sensor": false,
+    "_sensor": true,
     "_friction": 0.2,
     "_restitution": 0,
     "_offset": {
