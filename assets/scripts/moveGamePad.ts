@@ -1,8 +1,7 @@
 import { _decorator, Animation, Camera, Component, EventGamepad, EventKeyboard, game, input, Input, KeyCode, Node, Vec2, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
-
-@ccclass('move')
+@ccclass('moveGamePad')
 export class move extends Component {
     @property
     moveSpeed: number = 500.0;
@@ -26,7 +25,6 @@ export class move extends Component {
         this.isRight = false;
         this.isLeft = false;
         this.animComp = this.node.getComponent(Animation);
-        //moveDownAnim.play("moveDownAnimation");
 
     }
     private moveGamePad(event: EventGamepad) {
@@ -64,26 +62,6 @@ export class move extends Component {
             this.isRight = false;
             this.isLeft = false;
         }
-        // console.log(gamepad.leftStick.getValue());
-        // console.log(gamepad.leftStick.down.getValue());
-        // console.log(gamepad.leftStick.up.getValue());
-        // console.log(gamepad.leftStick.right.getValue());
-        // if (gamepad.leftStick.up.getValue() > 0)
-        //     this.isUp = true;
-        // else
-        //     this.isUp = false;
-        // if (gamepad.leftStick.down.getValue() > 0) {
-        //     //console.log(gamepad.leftStick.down.getValue());
-        //     this.isDown = true;
-        // }
-        // if (gamepad.leftStick.down.getValue() < 1)
-        //     this.isDown = false;
-        // if (gamepad.leftStick.right.getValue() > 0) {
-        //     this.isRight = true;
-        // }
-        // if (gamepad.leftStick.right.getValue() < 1) {
-        //     this.isRight = false;
-        // }
     }
     private onKeyUp(event: EventKeyboard) {
 
@@ -92,43 +70,26 @@ export class move extends Component {
 
     protected update(dt: number): void {
         if (this.isUp) {
-            //this.yspeed=0;
             this.yspeed = this.moveSpeed;
         }
         else if (this.isDown) {
-            //this.yspeed=0;
             this.yspeed = -this.moveSpeed;
         }
         else
             this.yspeed = 0;
-        //console.log(this.yspeed);
         if (this.isRight) {
-            //this.xspeed=0;
             this.xspeed = this.moveSpeed;
         }
         else if (this.isLeft) {
-            //this.xspeed=0;
             this.xspeed = -this.moveSpeed;
         }
         else
             this.xspeed = 0;
-        // if(Math.abs(this.yspeed)>this.maxSpeed)
-        //     {
-        //         this.yspeed=this.maxSpeed*this.yspeed/Math.abs(this.yspeed);
-        //     }
-        // if(Math.abs(this.xspeed)>this.maxSpeed)
-        //     {
-        //         this.xspeed=this.maxSpeed*this.xspeed/Math.abs(this.xspeed);
-        //     }
         this.position = new Vec3(this.node.position.x + this.xspeed, this.node.position.y + this.yspeed);
         this.camera.position = new Vec3(this.camera.position.x + this.xspeed, this.position.y + this.yspeed);
-        //console.log(this.yspeed);
         if (this.xspeed == 0 && this.yspeed == 0)
             this.animComp.play('animationIdleGamepad');
         this.node.setPosition(this.position);
-
     }
-
 }
-
 
